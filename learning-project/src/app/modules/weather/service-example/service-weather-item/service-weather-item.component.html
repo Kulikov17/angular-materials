@@ -1,0 +1,11 @@
+<div class="card">
+    <div>
+        <label>Город: </label>
+        <input [(ngModel)]="weatherForm.city" (change)="changeWeather()"/>
+    </div>
+
+    <div>
+        <label>Температура: </label>
+        <input [(ngModel)]="weatherForm.temperature" (change)="changeWeather()"/>
+    </div>
+</div>

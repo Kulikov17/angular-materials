@@ -1,0 +1,13 @@
+<p>Привет! На этой странице мы смотрим прогноз погоды. Это пример где мы используем компонентный подход.</p>
+
+<p>Исходные данные</p>
+<ng-container *ngFor="let weather of weatherData">
+    <div class="card">
+        <p>Город: {{weather.city}}</p>
+    
+        <p>Температура: {{weather.temperature}}</p>
+    </div>
+</ng-container>
+
+<p>Данные переданные в компоненты: </p>
+<app-component-weather-list [weatherData]="weatherData" (newWeatherEvent)="updateWeather($event)"></app-component-weather-list>

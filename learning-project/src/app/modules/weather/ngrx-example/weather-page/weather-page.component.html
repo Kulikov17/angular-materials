@@ -1,0 +1,15 @@
+<p>Привет! На этой странице мы смотрим прогноз погоды. Это пример где мы используем ngrx</p>
+
+<tui-loader [showLoader]="(isLoading$ | async) || false" [overlay]="true">
+    <p>Исходные данные</p>
+    <ng-container *ngFor="let weather of weatherData$ | async">
+        <div class="card">
+            <p>Город: {{weather.city}}</p>
+        
+            <p>Температура: {{weather.temperature}}</p>
+        </div>
+    </ng-container>
+
+    <p>Данные переданные в компоненты: </p>
+    <app-weather-list [weatherData]="(weatherData$ | async) || []"></app-weather-list>
+</tui-loader>
